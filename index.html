@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prince YT Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: dark storefront, one hero line, product grid, buy sheet with live UPI QR, plain policy block */
+:root{
+  --bg:#0c0b10; --surface:#16141c; --surface2:#1e1b26; --line:#2d2936;
+  --fg:#f4f1ec; --muted:#a9a3b3; --accent:#ff7a1a; --gold:#ffc83d; --ok:#35d07f; --ink:#140c04;
+  --display:'Russo One','Arial Black',Impact,sans-serif;
+  --body:'Hind','Segoe UI',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;margin:0;padding-inline:18px}
+.wrap{max-width:1040px;margin-inline:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:20px;letter-spacing:1px;text-decoration:none}
+.brand span{background:var(--gold);color:var(--ink);padding:2px 9px;border-radius:6px;font-size:15px;letter-spacing:2px}
+.tg{font-weight:600;text-decoration:none;border:1.5px solid var(--line);padding:9px 16px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+.tg:hover{border-color:var(--accent)}
+.hero{padding-block:44px 30px;max-width:720px}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(32px,6.4vw,58px);line-height:1.08;margin:0 0 16px;text-wrap:balance;letter-spacing:.5px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--muted);font-size:18px;margin:0;max-width:56ch}
+.promise{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-block:8px 44px}
+.promise div{border-top:2px solid var(--accent);padding-top:10px}
+.promise b{display:block;font-weight:700;margin-bottom:2px}
+.promise span{color:var(--muted);font-size:15px}
+h2{font-family:var(--display);font-weight:400;font-size:26px;margin:0 0 6px;letter-spacing:.5px}
+.sub{color:var(--muted);margin:0 0 20px}
+.sample{display:inline-block;background:var(--surface2);border:1px dashed var(--gold);color:var(--gold);font-size:13px;padding:3px 10px;border-radius:6px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-bottom:56px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .tag{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.card h3{margin:0;font-size:19px;line-height:1.25}
+.card p{margin:0;color:var(--muted);font-size:15px;flex:1}
+.meta{font-size:13px;color:var(--muted)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
+.price{font-family:var(--display);font-size:24px;font-variant-numeric:tabular-nums}
+.btn{background:var(--accent);color:var(--ink);border:0;font:700 16px var(--body);padding:11px 22px;border-radius:10px;cursor:pointer;min-height:44px}
+.btn:hover{background:var(--gold)}
+.btn.ghost{background:transparent;color:var(--fg);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent);background:transparent}
+.policy{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;border-top:1px solid var(--line);padding-block:34px}
+.policy h3{margin:0 0 6px;font-size:17px}
+.policy p{margin:0;color:var(--muted);font-size:15px}
+footer{border-top:1px solid var(--line);padding-block:22px 40px;color:var(--muted);font-size:14px}
+/* buy sheet */
+.veil{position:fixed;inset:0;background:rgba(5,4,8,.78);display:flex;align-items:flex-end;justify-content:center;z-index:20;padding:0}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:20px 20px 0 0;width:100%;max-width:480px;max-height:94vh;overflow-y:auto;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px))}
+@media(min-width:600px){.veil{align-items:center;padding:20px}.sheet{border-radius:20px}}
+.sheet h3{margin:0;font-family:var(--display);font-weight:400;font-size:21px}
+.sheet .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.x{background:none;border:0;color:var(--muted);font-size:28px;line-height:1;cursor:pointer;min-width:44px;min-height:44px}
+.amount{font-family:var(--display);font-size:34px;color:var(--gold);margin:6px 0 14px;font-variant-numeric:tabular-nums}
+.qrbox{background:#fff;border-radius:14px;padding:14px;width:fit-content;margin-inline:auto}
+.qrbox img,.qrbox canvas{display:block;max-width:100%;height:auto}
+.kv{display:flex;justify-content:space-between;gap:10px;align-items:center;background:var(--surface2);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:15px}
+.kv span:first-child{color:var(--muted)}
+.kv b{font-weight:600;word-break:break-all;text-align:right}
+.copy{background:none;border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:5px 10px;cursor:pointer;font:600 13px var(--body);min-height:32px}
+.steps{margin:16px 0 0;padding-left:20px;color:var(--muted);font-size:15px}
+.steps li{margin-bottom:4px}
+.actions{display:grid;gap:10px;margin-top:16px}
+.actions .btn{text-align:center;text-decoration:none;display:block}
+.note{font-size:13px;color:var(--muted);margin:12px 0 0}
+@media(prefers-reduced-motion:no-preference){.card{transition:border-color .2s}.card:hover{border-color:var(--accent)}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="brand" href="#top"><span>YT</span> PRINCE STORE</a>
+    <a class="tg" id="tgTop" href="#" target="_blank" rel="noopener">Telegram par poochho</a>
+  </header>
+
+  <section class="hero" id="top">
+    <h1>Digital files. <em>Seedha price,</em> seedha payment.</h1>
+    <p>Jo product ka price likha hai, wahi dena hai. Payment seedha seller ke UPI par jaata hai, aur payment ke baad file Telegram par bheji jaati hai.</p>
+  </section>
+
+  <section class="promise" aria-label="Hamara tareeka">
+    <div><b>Price pehle se saaf</b><span>Koi hidden charge nahi. QR mein utna hi amount aata hai jitna product par likha hai.</span></div>
+    <div><b>Koi nakli daawa nahi</b><span>Har product ke neeche likha hai ki usme kya milega. Kamai ya jeet ka koi vaada nahi.</span></div>
+    <div><b>Refund policy likhi hui</b><span>File na mile ya wahi na ho jo likha tha, toh paisa wapas. Details neeche hain.</span></div>
+  </section>
+
+  <section id="shop">
+    <h2>Products</h2>
+    <p class="sub">Product chuno aur Buy dabao. Ek QR khulega jisme amount pehle se bhara hoga.</p>
+    <span class="sample" id="sampleNote">Ye sample products hain. Apne asli products config mein badalna.</span>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="policy" id="policy">
+    <div><h3>Payment kaise hota hai</h3><p>QR scan karke kisi bhi UPI app se pay karo. Paisa seedha seller ke account mein jaata hai. Payment ke baad screenshot ya UTR number Telegram par bhejo.</p></div>
+    <div><h3>File kab milegi</h3><p>Payment check hone ke baad file Telegram par bheji jaati hai. Check karne mein kuch minute lag sakte hain, isliye thoda ruko.</p></div>
+    <div><h3>Refund</h3><p>Agar file nahi mili, khuli nahi, ya product description se alag hai, toh 7 din ke andar Telegram par bolo. Hum paisa wapas karenge.</p></div>
+  </section>
+
+  <footer>
+    <div>Prince YT. Sab prices Indian rupees mein hain.</div>
+    <div>Help ke liye: <a id="tgFoot" href="#" target="_blank" rel="noopener">Telegram</a></div>
+  </footer>
+</div>
+
+<div class="veil" id="veil" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sTitle">
+    <div class="top">
+      <h3 id="sTitle">Product</h3>
+      <button class="x" id="close" aria-label="Band karo">&times;</button>
+    </div>
+    <div class="amount" id="sAmt">&#8377;0</div>
+    <div class="qrbox"><div id="qr"></div></div>
+    <div class="kv"><span>UPI ID</span><b id="sUpi"></b><button class="copy" id="cpUpi">Copy</button></div>
+    <div class="kv"><span>Order note</span><b id="sNote"></b><button class="copy" id="cpNote">Copy</button></div>
+    <ol class="steps">
+      <li>QR scan karo ya UPI ID par exact amount bhejo.</li>
+      <li>Payment note mein order note likho.</li>
+      <li>Neeche button se Telegram par screenshot bhejo.</li>
+    </ol>
+    <div class="actions">
+      <a class="btn" id="sTg" href="#" target="_blank" rel="noopener">Payment ho gaya, Telegram par bhejo</a>
+      <a class="btn ghost" id="sUpiLink" href="#">Phone ke UPI app mein kholo</a>
+    </div>
+    <p class="note">Payment apne aap verify nahi hota. Seller screenshot dekhkar file bhejta hai.</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="config.js"></script>
+<script>
+/* ===== STORE CONFIG: yahan apni details daalo ===== */
+var STORE = {
+  name: "Prince YT",
+  upiId: "yourname@upi",          // apna asli UPI ID
+  payeeName: "Prince YT",         // UPI app mein ye naam dikhega
+  telegram: "your_username"       // Telegram username bina @ ke
+};
+var PRODUCTS = [
+  { id:"thumb", tag:"Thumbnails", name:"Gaming Thumbnail Pack", price:99,
+    desc:"10 editable thumbnail templates (PSD). Apni photo aur text lagao.", meta:"PSD + PNG preview | zip file" },
+  { id:"overlay", tag:"Stream", name:"Stream Overlay Set", price:149,
+    desc:"Webcam frame, alerts aur starting screen ka set.", meta:"PNG files | zip file" },
+  { id:"logo", tag:"Branding", name:"Channel Logo Template", price:199,
+    desc:"Editable logo template. Naam badlo aur use karo.", meta:"SVG + PNG | zip file" }
+];
+/* ================================================== */
+/* config.js (admin panel se bani file) ho toh wahi use hoti hai */
+if(window.STORE_CONFIG){
+  if(window.STORE_CONFIG.store){ STORE = window.STORE_CONFIG.store; }
+  if(Array.isArray(window.STORE_CONFIG.products) && window.STORE_CONFIG.products.length){
+    PRODUCTS = window.STORE_CONFIG.products;
+  }
+  document.getElementById("sampleNote").hidden = true;
+}
+
+var tgUrl = "https://t.me/" + STORE.telegram;
+["tgTop","tgFoot"].forEach(function(id){ document.getElementById(id).href = tgUrl; });
+
+var grid = document.getElementById("grid");
+PRODUCTS.forEach(function(p){
+  var c = document.createElement("article");
+  c.className = "card";
+  c.innerHTML = '<div class="tag"></div><h3></h3><p></p><div class="meta"></div>' +
+    '<div class="row"><div class="price"></div><button class="btn" type="button">Buy</button></div>';
+  c.querySelector(".tag").textContent = p.tag;
+  c.querySelector("h3").textContent = p.name;
+  c.querySelector("p").textContent = p.desc;
+  c.querySelector(".meta").textContent = p.meta;
+  c.querySelector(".price").textContent = "₹" + p.price;
+  c.querySelector(".btn").addEventListener("click", function(){ openSheet(p); });
+  grid.appendChild(c);
+});
+
+var veil = document.getElementById("veil");
+var qrHost = document.getElementById("qr");
+var lastFocus = null;
+
+function orderNote(p){
+  return "PYT-" + p.id.toUpperCase() + "-" + Math.floor(1000 + Math.random()*9000);
+}
+function upiLink(p, note){
+  return "upi://pay?pa=" + encodeURIComponent(STORE.upiId) +
+    "&pn=" + encodeURIComponent(STORE.payeeName) +
+    "&am=" + p.price.toFixed(2) + "&cu=INR&tn=" + encodeURIComponent(note);
+}
+function openSheet(p){
+  lastFocus = document.activeElement;
+  var note = orderNote(p);
+  var link = upiLink(p, note);
+  document.getElementById("sTitle").textContent = p.name;
+  document.getElementById("sAmt").textContent = "₹" + p.price;
+  document.getElementById("sUpi").textContent = STORE.upiId;
+  document.getElementById("sNote").textContent = note;
+  document.getElementById("sUpiLink").href = link;
+  var msg = "Payment kar diya.\nProduct: " + p.name + "\nAmount: Rs " + p.price + "\nOrder note: " + note + "\n(Screenshot neeche bhej raha hoon)";
+  document.getElementById("sTg").href = tgUrl + "?text=" + encodeURIComponent(msg);
+  qrHost.innerHTML = "";
+  try{
+    new QRCode(qrHost, { text: link, width: 220, height: 220, correctLevel: QRCode.CorrectLevel.M });
+  }catch(e){
+    qrHost.textContent = "QR nahi bana. UPI ID par seedha pay karo.";
+  }
+  veil.hidden = false;
+  document.getElementById("close").focus();
+}
+function closeSheet(){
+  veil.hidden = true;
+  if(lastFocus) lastFocus.focus();
+}
+document.getElementById("close").addEventListener("click", closeSheet);
+veil.addEventListener("click", function(e){ if(e.target === veil) closeSheet(); });
+document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !veil.hidden) closeSheet(); });
+
+function wireCopy(btnId, srcId){
+  var b = document.getElementById(btnId);
+  b.addEventListener("click", function(){
+    var t = document.getElementById(srcId).textContent;
+    var done = function(){ b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1500); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(done, function(){ b.textContent = "Select karo"; });
+    }else{ b.textContent = "Select karo"; }
+  });
+}
+wireCopy("cpUpi","sUpi");
+wireCopy("cpNote","sNote");
+</script>
+</body>
+</html>
