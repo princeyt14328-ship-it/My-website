@@ -3,237 +3,212 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101018">
+<meta name="description" content="Prince YT Store — digital creator files and templates.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <title>Prince YT Store</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
 <style>
-/* Layout: dark storefront, one hero line, product grid, buy sheet with live UPI QR, plain policy block */
-:root{
-  --bg:#0c0b10; --surface:#16141c; --surface2:#1e1b26; --line:#2d2936;
-  --fg:#f4f1ec; --muted:#a9a3b3; --accent:#ff7a1a; --gold:#ffc83d; --ok:#35d07f; --ink:#140c04;
-  --display:'Russo One','Arial Black',Impact,sans-serif;
-  --body:'Hind','Segoe UI',system-ui,sans-serif;
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-[hidden]{display:none!important}
-body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;margin:0;padding-inline:18px}
-.wrap{max-width:1040px;margin-inline:auto}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:20px;letter-spacing:1px;text-decoration:none}
-.brand span{background:var(--gold);color:var(--ink);padding:2px 9px;border-radius:6px;font-size:15px;letter-spacing:2px}
-.tg{font-weight:600;text-decoration:none;border:1.5px solid var(--line);padding:9px 16px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
-.tg:hover{border-color:var(--accent)}
-.hero{padding-block:44px 30px;max-width:720px}
-.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(32px,6.4vw,58px);line-height:1.08;margin:0 0 16px;text-wrap:balance;letter-spacing:.5px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{color:var(--muted);font-size:18px;margin:0;max-width:56ch}
-.promise{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-block:8px 44px}
-.promise div{border-top:2px solid var(--accent);padding-top:10px}
-.promise b{display:block;font-weight:700;margin-bottom:2px}
-.promise span{color:var(--muted);font-size:15px}
-h2{font-family:var(--display);font-weight:400;font-size:26px;margin:0 0 6px;letter-spacing:.5px}
-.sub{color:var(--muted);margin:0 0 20px}
-.sample{display:inline-block;background:var(--surface2);border:1px dashed var(--gold);color:var(--gold);font-size:13px;padding:3px 10px;border-radius:6px;margin-bottom:18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-bottom:56px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.card .tag{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);font-weight:600}
-.card h3{margin:0;font-size:19px;line-height:1.25}
-.card p{margin:0;color:var(--muted);font-size:15px;flex:1}
-.meta{font-size:13px;color:var(--muted)}
-.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
-.price{font-family:var(--display);font-size:24px;font-variant-numeric:tabular-nums}
-.btn{background:var(--accent);color:var(--ink);border:0;font:700 16px var(--body);padding:11px 22px;border-radius:10px;cursor:pointer;min-height:44px}
-.btn:hover{background:var(--gold)}
-.btn.ghost{background:transparent;color:var(--fg);border:1.5px solid var(--line)}
-.btn.ghost:hover{border-color:var(--accent);background:transparent}
-.policy{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;border-top:1px solid var(--line);padding-block:34px}
-.policy h3{margin:0 0 6px;font-size:17px}
-.policy p{margin:0;color:var(--muted);font-size:15px}
-footer{border-top:1px solid var(--line);padding-block:22px 40px;color:var(--muted);font-size:14px}
-/* buy sheet */
-.veil{position:fixed;inset:0;background:rgba(5,4,8,.78);display:flex;align-items:flex-end;justify-content:center;z-index:20;padding:0}
-.sheet{background:var(--surface);border:1px solid var(--line);border-radius:20px 20px 0 0;width:100%;max-width:480px;max-height:94vh;overflow-y:auto;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px))}
-@media(min-width:600px){.veil{align-items:center;padding:20px}.sheet{border-radius:20px}}
-.sheet h3{margin:0;font-family:var(--display);font-weight:400;font-size:21px}
-.sheet .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.x{background:none;border:0;color:var(--muted);font-size:28px;line-height:1;cursor:pointer;min-width:44px;min-height:44px}
-.amount{font-family:var(--display);font-size:34px;color:var(--gold);margin:6px 0 14px;font-variant-numeric:tabular-nums}
-.qrbox{background:#fff;border-radius:14px;padding:14px;width:fit-content;margin-inline:auto}
-.qrbox img,.qrbox canvas{display:block;max-width:100%;height:auto}
-.kv{display:flex;justify-content:space-between;gap:10px;align-items:center;background:var(--surface2);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:15px}
-.kv span:first-child{color:var(--muted)}
-.kv b{font-weight:600;word-break:break-all;text-align:right}
-.copy{background:none;border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:5px 10px;cursor:pointer;font:600 13px var(--body);min-height:32px}
-.steps{margin:16px 0 0;padding-left:20px;color:var(--muted);font-size:15px}
-.steps li{margin-bottom:4px}
-.actions{display:grid;gap:10px;margin-top:16px}
-.actions .btn{text-align:center;text-decoration:none;display:block}
-.note{font-size:13px;color:var(--muted);margin:12px 0 0}
-@media(prefers-reduced-motion:no-preference){.card{transition:border-color .2s}.card:hover{border-color:var(--accent)}}
+:root{color-scheme:dark;--bg:#0b0b12;--panel:#14141e;--panel2:#1d1d2a;--line:#303044;--text:#f8f7ff;--muted:#aaa9bd;--accent:#ff7a18;--accent2:#ffd166;--good:#48d597;--shadow:0 18px 45px #0005}
+:root.light{color-scheme:light;--bg:#f6f6fb;--panel:#fff;--panel2:#f0eff7;--line:#deddea;--text:#191827;--muted:#66657a;--accent:#d95700;--accent2:#9a6500;--good:#168454;--shadow:0 18px 45px #29204412}
+*{box-sizing:border-box} [hidden]{display:none!important} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 80% -10%,#ff7a1817,transparent 42%),var(--bg);color:var(--text);font:16px/1.55 Hind,system-ui,sans-serif;transition:background .2s,color .2s}
+a{color:inherit}button,input,select{font:inherit}button{cursor:pointer} :focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+.wrap{width:min(1080px,100% - 32px);margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:22px Russo One,Impact,sans-serif;letter-spacing:.5px}
+.logo{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#211006;font:20px Russo One}
+.head-actions{display:flex;gap:8px;align-items:center}.icon-btn,.pill{border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--text);padding:9px 13px;min-height:42px}
+.hero{padding:54px 0 28px;max-width:780px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent2);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;font-size:12px}
+.hero h1{font:clamp(36px,7vw,66px)/1.05 Russo One,Impact,sans-serif;margin:14px 0;letter-spacing:.2px}.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);font-size:18px;max-width:620px;margin:0}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:11px 17px;border:0;border-radius:12px;background:var(--accent);color:#1b0d04;font-weight:700;text-decoration:none;box-shadow:0 8px 22px #ff7a1826}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.secondary{background:var(--panel);border:1px solid var(--line);box-shadow:none;color:var(--text)}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0 48px}
+.trust article{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}.trust b{display:block}.trust span{color:var(--muted);font-size:14px}
+section{scroll-margin-top:20px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+h2{font:27px Russo One,Impact,sans-serif;margin:0}.muted{color:var(--muted);margin:4px 0 0}
+.controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin:18px 0}
+.search{width:100%;min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);padding:11px 14px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.filter{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;padding:7px 13px}.filter.active{background:var(--accent);border-color:var(--accent);color:#1b0d04;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-bottom:54px}
+.card{background:linear-gradient(155deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:11px;min-width:0;box-shadow:var(--shadow);transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.product-art{height:112px;border-radius:13px;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,#ffbd5b55,transparent 38%),linear-gradient(135deg,#ff7a1822,#6b5cff22);font-size:43px}
+.tag{font-size:12px;color:var(--accent2);letter-spacing:1.2px;text-transform:uppercase;font-weight:700}.card h3{margin:0;font-size:19px;line-height:1.25}.card p{margin:0;color:var(--muted);font-size:14px;flex:1}.meta{font-size:12px;color:var(--muted)}
+.card-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:4px}.price{font:25px Russo One,Impact,sans-serif}.small-btn{border:0;border-radius:10px;padding:10px 14px;background:var(--accent);color:#1b0d04;font-weight:700}
+.empty{padding:25px;text-align:center;border:1px dashed var(--line);border-radius:14px;color:var(--muted);grid-column:1/-1}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:0 0 40px}.info{border-top:2px solid var(--accent);padding:14px 0}.info h3{margin:0 0 5px;font-size:17px}.info p{margin:0;color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--line);padding:22px 0 38px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.notice{border:1px solid #ffbd5b66;background:#ffbd5b12;color:var(--text);border-radius:12px;padding:12px 14px;margin:0 0 20px;font-size:14px}
+.veil{position:fixed;inset:0;background:#000b;display:flex;align-items:flex-end;justify-content:center;z-index:20;padding:0}
+.sheet{background:var(--panel);border:1px solid var(--line);border-radius:22px 22px 0 0;width:100%;max-width:500px;max-height:94dvh;overflow:auto;padding:20px 18px calc(22px + env(safe-area-inset-bottom,0px));box-shadow:var(--shadow)}
+@media(min-width:650px){.veil{align-items:center;padding:18px}.sheet{border-radius:22px}}
+.sheet-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.sheet h3{font:22px Russo One;margin:0}.close{background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:24px;width:42px;height:42px}
+.amount{font:36px Russo One;color:var(--accent2);margin:7px 0 14px}.qrbox{background:#fff;border-radius:14px;padding:12px;width:max-content;max-width:100%;margin:0 auto}.qrbox img,.qrbox canvas{max-width:100%;height:auto!important}
+.kv{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--panel2);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:14px}.kv span{color:var(--muted)}.kv b{word-break:break-all;text-align:right}.copy{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:8px;padding:5px 9px}
+.steps{padding-left:20px;color:var(--muted);font-size:14px}.actions{display:grid;gap:9px;margin-top:14px}.actions .btn{width:100%}.note{font-size:12px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--text);color:var(--bg);padding:10px 16px;border-radius:999px;z-index:40;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trust,.info-grid{grid-template-columns:1fr}.hero{padding-top:38px}}
+@media(max-width:430px){.wrap{width:calc(100% - 22px)}.grid{grid-template-columns:1fr}.card{padding:15px}.controls{grid-template-columns:1fr}.hero p{font-size:16px}.brand{font-size:18px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-
 <div class="wrap">
-  <header>
-    <a class="brand" href="#top"><span>YT</span> PRINCE STORE</a>
-    <a class="tg" id="tgTop" href="#" target="_blank" rel="noopener">Telegram par poochho</a>
-  </header>
+<header>
+  <a class="brand" href="#top" aria-label="Prince YT Store home"><span class="logo">PY</span> PRINCE <span style="color:var(--accent)">YT STORE</span></a>
+  <div class="head-actions">
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Theme badlo">☀️ Theme</button>
+    <a class="pill" id="tgTop" href="#" target="_blank" rel="noopener">Telegram ↗</a>
+  </div>
+</header>
 
-  <section class="hero" id="top">
-    <h1>Digital files. <em>Seedha price,</em> seedha payment.</h1>
-    <p>Jo product ka price likha hai, wahi dena hai. Payment seedha seller ke UPI par jaata hai, aur payment ke baad file Telegram par bheji jaati hai.</p>
-  </section>
+<main>
+<section class="hero" id="top">
+  <span class="eyebrow">✦ Creator tools • Digital downloads</span>
+  <h1>Apne content ko do <span>next-level</span> look.</h1>
+  <p>Creator templates aur digital files ek jagah. Product ki details aur price pehle dekho; payment se pehle seller ki details verify karna.</p>
+  <div class="hero-actions">
+    <a class="btn" href="#shop">🛍️ Products dekho</a>
+    <button class="btn secondary" id="installBtn" type="button" hidden>📲 Install app</button>
+  </div>
+</section>
 
-  <section class="promise" aria-label="Hamara tareeka">
-    <div><b>Price pehle se saaf</b><span>Koi hidden charge nahi. QR mein utna hi amount aata hai jitna product par likha hai.</span></div>
-    <div><b>Koi nakli daawa nahi</b><span>Har product ke neeche likha hai ki usme kya milega. Kamai ya jeet ka koi vaada nahi.</span></div>
-    <div><b>Refund policy likhi hui</b><span>File na mile ya wahi na ho jo likha tha, toh paisa wapas. Details neeche hain.</span></div>
-  </section>
+<section class="trust" aria-label="Store details">
+  <article><b>🏷️ Clear pricing</b><span>Product card par price aur file details.</span></article>
+  <article><b>📱 Mobile friendly</b><span>Phone aur desktop dono par responsive.</span></article>
+  <article><b>🤝 Manual confirmation</b><span>Payment seller verify karega; website auto-verify nahi karti.</span></article>
+</section>
 
-  <section id="shop">
-    <h2>Products</h2>
-    <p class="sub">Product chuno aur Buy dabao. Ek QR khulega jisme amount pehle se bhara hoga.</p>
-    <span class="sample" id="sampleNote">Ye sample products hain. Apne asli products config mein badalna.</span>
-    <div class="grid" id="grid"></div>
-  </section>
+<section id="shop">
+  <div class="section-head"><div><h2>Featured products</h2><p class="muted">Search karo ya category filter chuno.</p></div></div>
+  <div class="notice" id="setupNotice">Setup pending: abhi UPI ID aur Telegram username sample placeholders hain. Real payment lene se pehle code mein apni correct details set karo. Products bhi demo hain.</div>
+  <div class="controls">
+    <input class="search" id="search" type="search" placeholder="🔎 Product search..." aria-label="Products search">
+    <button class="btn secondary" id="clearSearch" type="button">Clear</button>
+  </div>
+  <div class="filters" id="filters" aria-label="Product categories"></div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+</section>
 
-  <section class="policy" id="policy">
-    <div><h3>Payment kaise hota hai</h3><p>QR scan karke kisi bhi UPI app se pay karo. Paisa seedha seller ke account mein jaata hai. Payment ke baad screenshot ya UTR number Telegram par bhejo.</p></div>
-    <div><h3>File kab milegi</h3><p>Payment check hone ke baad file Telegram par bheji jaati hai. Check karne mein kuch minute lag sakte hain, isliye thoda ruko.</p></div>
-    <div><h3>Refund</h3><p>Agar file nahi mili, khuli nahi, ya product description se alag hai, toh 7 din ke andar Telegram par bolo. Hum paisa wapas karenge.</p></div>
-  </section>
-
-  <footer>
-    <div>Prince YT. Sab prices Indian rupees mein hain.</div>
-    <div>Help ke liye: <a id="tgFoot" href="#" target="_blank" rel="noopener">Telegram</a></div>
-  </footer>
+<section class="info-grid" id="help">
+  <article class="info"><h3>💳 Payment</h3><p>Buy dabane par order amount aur UPI QR dikhte hain. Pay karne se pehle naam aur amount apne UPI app mein check karna.</p></article>
+  <article class="info"><h3>📦 Delivery</h3><p>Delivery ka tareeka aur expected time seller se confirm karo. Screenshot bhejne ka button sirf Telegram chat kholta hai.</p></article>
+  <article class="info"><h3>↩️ Refund & support</h3><p>Purchase se pehle refund terms seller se confirm karna. Apna UPI PIN, OTP ya password kisi ko mat dena.</p></article>
+</section>
+</main>
+<footer><span>© <span id="year"></span> Prince YT Store</span><span>Made for creators • <a id="tgFoot" href="#" target="_blank" rel="noopener">Contact support</a></span></footer>
 </div>
 
 <div class="veil" id="veil" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sTitle">
-    <div class="top">
-      <h3 id="sTitle">Product</h3>
-      <button class="x" id="close" aria-label="Band karo">&times;</button>
-    </div>
-    <div class="amount" id="sAmt">&#8377;0</div>
+    <div class="sheet-top"><h3 id="sTitle">Product</h3><button class="close" id="close" type="button" aria-label="Close">×</button></div>
+    <div class="amount" id="sAmt">₹0</div>
     <div class="qrbox"><div id="qr"></div></div>
-    <div class="kv"><span>UPI ID</span><b id="sUpi"></b><button class="copy" id="cpUpi">Copy</button></div>
-    <div class="kv"><span>Order note</span><b id="sNote"></b><button class="copy" id="cpNote">Copy</button></div>
-    <ol class="steps">
-      <li>QR scan karo ya UPI ID par exact amount bhejo.</li>
-      <li>Payment note mein order note likho.</li>
-      <li>Neeche button se Telegram par screenshot bhejo.</li>
-    </ol>
-    <div class="actions">
-      <a class="btn" id="sTg" href="#" target="_blank" rel="noopener">Payment ho gaya, Telegram par bhejo</a>
-      <a class="btn ghost" id="sUpiLink" href="#">Phone ke UPI app mein kholo</a>
-    </div>
-    <p class="note">Payment apne aap verify nahi hota. Seller screenshot dekhkar file bhejta hai.</p>
+    <div class="kv"><span>UPI ID</span><b id="sUpi"></b><button class="copy" id="cpUpi" type="button">Copy</button></div>
+    <div class="kv"><span>Order note</span><b id="sNote"></b><button class="copy" id="cpNote" type="button">Copy</button></div>
+    <ol class="steps"><li>UPI app mein payee name aur exact amount verify karo.</li><li>Payment note mein order note daalo, agar app allow kare.</li><li>Payment ke baad seller se delivery confirm karo.</li></ol>
+    <div class="actions"><a class="btn" id="sUpiLink" href="#">Open UPI app</a><a class="btn secondary" id="sTg" href="#" target="_blank" rel="noopener">Telegram par order details bhejo ↗</a></div>
+    <p class="note">Important: payment auto-verify nahi hota. Payment karne se pehle UPI app mein details check karo. Kabhi bhi UPI PIN/OTP share mat karo.</p>
   </div>
 </div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="config.js"></script>
 <script>
-/* ===== STORE CONFIG: yahan apni details daalo ===== */
-var STORE = {
-  name: "Prince YT",
-  upiId: "yourname@upi",          // apna asli UPI ID
-  payeeName: "Prince YT",         // UPI app mein ye naam dikhega
-  telegram: "your_username"       // Telegram username bina @ ke
-};
-var PRODUCTS = [
-  { id:"thumb", tag:"Thumbnails", name:"Gaming Thumbnail Pack", price:99,
-    desc:"10 editable thumbnail templates (PSD). Apni photo aur text lagao.", meta:"PSD + PNG preview | zip file" },
-  { id:"overlay", tag:"Stream", name:"Stream Overlay Set", price:149,
-    desc:"Webcam frame, alerts aur starting screen ka set.", meta:"PNG files | zip file" },
-  { id:"logo", tag:"Branding", name:"Channel Logo Template", price:199,
-    desc:"Editable logo template. Naam badlo aur use karo.", meta:"SVG + PNG | zip file" }
+'use strict';
+const DEFAULT_STORE = {name:'Prince YT', upiId:'yourname@upi', payeeName:'Prince YT', telegram:'your_username'};
+let STORE = {...DEFAULT_STORE};
+let PRODUCTS = [
+ {id:'thumb',tag:'Thumbnails',icon:'🎮',name:'Gaming Thumbnail Pack',price:99,desc:'10 editable thumbnail templates. Apni photo aur text lagao.',meta:'PSD + PNG preview • ZIP'},
+ {id:'overlay',tag:'Stream',icon:'🖥️',name:'Stream Overlay Set',price:149,desc:'Stream ke liye overlay graphics ka demo listing.',meta:'PNG files • ZIP'},
+ {id:'logo',tag:'Branding',icon:'⚡',name:'Channel Logo Template',price:199,desc:'Editable logo template ka demo listing.',meta:'SVG + PNG'}
 ];
-/* ================================================== */
-/* config.js (admin panel se bani file) ho toh wahi use hoti hai */
-if(window.STORE_CONFIG){
-  if(window.STORE_CONFIG.store){ STORE = window.STORE_CONFIG.store; }
-  if(Array.isArray(window.STORE_CONFIG.products) && window.STORE_CONFIG.products.length){
-    PRODUCTS = window.STORE_CONFIG.products;
-  }
-  document.getElementById("sampleNote").hidden = true;
+if (window.STORE_CONFIG) {
+ if (window.STORE_CONFIG.store) STORE = {...STORE,...window.STORE_CONFIG.store};
+ if (Array.isArray(window.STORE_CONFIG.products) && window.STORE_CONFIG.products.length) PRODUCTS = window.STORE_CONFIG.products;
 }
+const configured = STORE.upiId !== DEFAULT_STORE.upiId && STORE.telegram !== DEFAULT_STORE.telegram &&
+ STORE.upiId.includes('@') && !STORE.telegram.includes('your_username');
+const setupNotice = document.getElementById('setupNotice');
+if (configured) setupNotice.hidden = true;
+const tgUrl = STORE.telegram && !STORE.telegram.includes('your_username') ? 'https://t.me/' + STORE.telegram.replace(/^@/,'') : 'https://t.me/';
+['tgTop','tgFoot'].forEach(id => document.getElementById(id).href = tgUrl);
+document.getElementById('year').textContent = new Date().getFullYear();
 
-var tgUrl = "https://t.me/" + STORE.telegram;
-["tgTop","tgFoot"].forEach(function(id){ document.getElementById(id).href = tgUrl; });
-
-var grid = document.getElementById("grid");
-PRODUCTS.forEach(function(p){
-  var c = document.createElement("article");
-  c.className = "card";
-  c.innerHTML = '<div class="tag"></div><h3></h3><p></p><div class="meta"></div>' +
-    '<div class="row"><div class="price"></div><button class="btn" type="button">Buy</button></div>';
-  c.querySelector(".tag").textContent = p.tag;
-  c.querySelector("h3").textContent = p.name;
-  c.querySelector("p").textContent = p.desc;
-  c.querySelector(".meta").textContent = p.meta;
-  c.querySelector(".price").textContent = "₹" + p.price;
-  c.querySelector(".btn").addEventListener("click", function(){ openSheet(p); });
-  grid.appendChild(c);
+const grid = document.getElementById('grid'), filters = document.getElementById('filters');
+let activeCategory = 'All';
+const categories = ['All', ...new Set(PRODUCTS.map(p => p.tag || 'Other'))];
+categories.forEach(cat => {
+ const b = document.createElement('button'); b.type='button'; b.className='filter'+(cat==='All'?' active':''); b.textContent=cat;
+ b.addEventListener('click',()=>{activeCategory=cat; [...filters.children].forEach(x=>x.classList.toggle('active',x===b)); renderProducts();});
+ filters.appendChild(b);
 });
-
-var veil = document.getElementById("veil");
-var qrHost = document.getElementById("qr");
-var lastFocus = null;
-
-function orderNote(p){
-  return "PYT-" + p.id.toUpperCase() + "-" + Math.floor(1000 + Math.random()*9000);
+function renderProducts(){
+ const q = document.getElementById('search').value.trim().toLowerCase(); grid.replaceChildren();
+ const list = PRODUCTS.filter(p => (activeCategory==='All'||(p.tag||'Other')===activeCategory) &&
+  [p.name,p.tag,p.desc,p.meta].join(' ').toLowerCase().includes(q));
+ if(!list.length){const e=document.createElement('div');e.className='empty';e.textContent='Koi product nahi mila. Search badal kar dekho.';grid.appendChild(e);return;}
+ list.forEach(p=>{
+  const c=document.createElement('article');c.className='card';
+  const art=document.createElement('div');art.className='product-art';art.textContent=p.icon||'✨';art.setAttribute('aria-hidden','true');
+  const tag=document.createElement('div');tag.className='tag';tag.textContent=p.tag||'Other';
+  const h=document.createElement('h3');h.textContent=p.name;
+  const d=document.createElement('p');d.textContent=p.desc||'Digital product';
+  const m=document.createElement('div');m.className='meta';m.textContent=p.meta||'Digital download';
+  const foot=document.createElement('div');foot.className='card-foot';
+  const price=document.createElement('div');price.className='price';price.textContent='₹'+Number(p.price||0).toLocaleString('en-IN');
+  const buy=document.createElement('button');buy.className='small-btn';buy.type='button';buy.textContent='Details / Buy';
+  buy.addEventListener('click',()=>openSheet(p));
+  foot.append(price,buy);c.append(art,tag,h,d,m,foot);grid.appendChild(c);
+ });
 }
-function upiLink(p, note){
-  return "upi://pay?pa=" + encodeURIComponent(STORE.upiId) +
-    "&pn=" + encodeURIComponent(STORE.payeeName) +
-    "&am=" + p.price.toFixed(2) + "&cu=INR&tn=" + encodeURIComponent(note);
-}
+document.getElementById('search').addEventListener('input',renderProducts);
+document.getElementById('clearSearch').addEventListener('click',()=>{document.getElementById('search').value='';activeCategory='All';[...filters.children].forEach(x=>x.classList.toggle('active',x.textContent==='All'));renderProducts();});
+renderProducts();
+
+const veil=document.getElementById('veil'), qrHost=document.getElementById('qr');let lastFocus=null;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800);}
+function orderNote(p){return 'PYT-'+String(p.id||'item').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,12)+'-'+Math.floor(1000+Math.random()*9000);}
+function upiLink(p,note){return 'upi://pay?pa='+encodeURIComponent(STORE.upiId)+'&pn='+encodeURIComponent(STORE.payeeName)+'&am='+Number(p.price).toFixed(2)+'&cu=INR&tn='+encodeURIComponent(note);}
 function openSheet(p){
-  lastFocus = document.activeElement;
-  var note = orderNote(p);
-  var link = upiLink(p, note);
-  document.getElementById("sTitle").textContent = p.name;
-  document.getElementById("sAmt").textContent = "₹" + p.price;
-  document.getElementById("sUpi").textContent = STORE.upiId;
-  document.getElementById("sNote").textContent = note;
-  document.getElementById("sUpiLink").href = link;
-  var msg = "Payment kar diya.\nProduct: " + p.name + "\nAmount: Rs " + p.price + "\nOrder note: " + note + "\n(Screenshot neeche bhej raha hoon)";
-  document.getElementById("sTg").href = tgUrl + "?text=" + encodeURIComponent(msg);
-  qrHost.innerHTML = "";
-  try{
-    new QRCode(qrHost, { text: link, width: 220, height: 220, correctLevel: QRCode.CorrectLevel.M });
-  }catch(e){
-    qrHost.textContent = "QR nahi bana. UPI ID par seedha pay karo.";
-  }
-  veil.hidden = false;
-  document.getElementById("close").focus();
+ if(!Number.isFinite(Number(p.price))||Number(p.price)<=0){toast('Is product ka price setup karo.');return;}
+ if(!configured){toast('Pehle UPI ID aur Telegram username configure karo.');return;}
+ lastFocus=document.activeElement;const note=orderNote(p),link=upiLink(p,note);
+ document.getElementById('sTitle').textContent=p.name;document.getElementById('sAmt').textContent='₹'+Number(p.price).toLocaleString('en-IN');
+ document.getElementById('sUpi').textContent=STORE.upiId;document.getElementById('sNote').textContent=note;
+ document.getElementById('sUpiLink').href=link;
+ const msg='Hello! Order details:\\nProduct: '+p.name+'\\nAmount: ₹'+p.price+'\\nOrder note: '+note+'\\nPlease confirm availability and delivery.';
+ document.getElementById('sTg').href=tgUrl+'?text='+encodeURIComponent(msg);
+ qrHost.replaceChildren();
+ if(window.QRCode){new QRCode(qrHost,{text:link,width:220,height:220,correctLevel:QRCode.CorrectLevel.M});}
+ else {const fallback=document.createElement('p');fallback.textContent='QR library load nahi hui. UPI app button use karo.';qrHost.appendChild(fallback);}
+ veil.hidden=false;document.getElementById('close').focus();
 }
-function closeSheet(){
-  veil.hidden = true;
-  if(lastFocus) lastFocus.focus();
-}
-document.getElementById("close").addEventListener("click", closeSheet);
-veil.addEventListener("click", function(e){ if(e.target === veil) closeSheet(); });
-document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !veil.hidden) closeSheet(); });
+function closeSheet(){veil.hidden=true;if(lastFocus)lastFocus.focus();}
+document.getElementById('close').addEventListener('click',closeSheet);
+veil.addEventListener('click',e=>{if(e.target===veil)closeSheet();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!veil.hidden)closeSheet();});
+function copyText(srcId,btnId){const b=document.getElementById(btnId),text=document.getElementById(srcId).textContent;
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(()=>toast('Copied!')).catch(()=>toast(text));
+ else toast(text);}
+document.getElementById('cpUpi').addEventListener('click',()=>copyText('sUpi','cpUpi'));
+document.getElementById('cpNote').addEventListener('click',()=>copyText('sNote','cpNote'));
 
-function wireCopy(btnId, srcId){
-  var b = document.getElementById(btnId);
-  b.addEventListener("click", function(){
-    var t = document.getElementById(srcId).textContent;
-    var done = function(){ b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1500); };
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(t).then(done, function(){ b.textContent = "Select karo"; });
-    }else{ b.textContent = "Select karo"; }
-  });
-}
-wireCopy("cpUpi","sUpi");
-wireCopy("cpNote","sNote");
+const root=document.documentElement,themeBtn=document.getElementById('themeBtn');
+const savedTheme=localStorage.getItem('pyt-theme');if(savedTheme==='light')root.classList.add('light');
+function syncTheme(){themeBtn.textContent=root.classList.contains('light')?'🌙 Dark':'☀️ Light';}
+syncTheme();themeBtn.addEventListener('click',()=>{root.classList.toggle('light');localStorage.setItem('pyt-theme',root.classList.contains('light')?'light':'dark');syncTheme();});
+
+let deferredPrompt=null;const installBtn=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.hidden=false;});
+installBtn.addEventListener('click',async()=>{if(!deferredPrompt){toast('Chrome menu ⋮ se “Add to Home screen” chuno.');return;}deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.hidden=true;});
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
 </body>
 </html>
