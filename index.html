@@ -1,214 +1,402 @@
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#101018">
-<meta name="description" content="Prince YT Store — digital creator files and templates.">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<title>Prince YT Store</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAB VIP SUPREME V15</title>
+
 <style>
-:root{color-scheme:dark;--bg:#0b0b12;--panel:#14141e;--panel2:#1d1d2a;--line:#303044;--text:#f8f7ff;--muted:#aaa9bd;--accent:#ff7a18;--accent2:#ffd166;--good:#48d597;--shadow:0 18px 45px #0005}
-:root.light{color-scheme:light;--bg:#f6f6fb;--panel:#fff;--panel2:#f0eff7;--line:#deddea;--text:#191827;--muted:#66657a;--accent:#d95700;--accent2:#9a6500;--good:#168454;--shadow:0 18px 45px #29204412}
-*{box-sizing:border-box} [hidden]{display:none!important} html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at 80% -10%,#ff7a1817,transparent 42%),var(--bg);color:var(--text);font:16px/1.55 Hind,system-ui,sans-serif;transition:background .2s,color .2s}
-a{color:inherit}button,input,select{font:inherit}button{cursor:pointer} :focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
-.wrap{width:min(1080px,100% - 32px);margin:auto}
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0;flex-wrap:wrap;border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:22px Russo One,Impact,sans-serif;letter-spacing:.5px}
-.logo{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#211006;font:20px Russo One}
-.head-actions{display:flex;gap:8px;align-items:center}.icon-btn,.pill{border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--text);padding:9px 13px;min-height:42px}
-.hero{padding:54px 0 28px;max-width:780px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent2);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;font-size:12px}
-.hero h1{font:clamp(36px,7vw,66px)/1.05 Russo One,Impact,sans-serif;margin:14px 0;letter-spacing:.2px}.hero h1 span{color:var(--accent)}
-.hero p{color:var(--muted);font-size:18px;max-width:620px;margin:0}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:11px 17px;border:0;border-radius:12px;background:var(--accent);color:#1b0d04;font-weight:700;text-decoration:none;box-shadow:0 8px 22px #ff7a1826}
-.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.secondary{background:var(--panel);border:1px solid var(--line);box-shadow:none;color:var(--text)}
-.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0 48px}
-.trust article{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}.trust b{display:block}.trust span{color:var(--muted);font-size:14px}
-section{scroll-margin-top:20px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-h2{font:27px Russo One,Impact,sans-serif;margin:0}.muted{color:var(--muted);margin:4px 0 0}
-.controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin:18px 0}
-.search{width:100%;min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);padding:11px 14px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.filter{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;padding:7px 13px}.filter.active{background:var(--accent);border-color:var(--accent);color:#1b0d04;font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-bottom:54px}
-.card{background:linear-gradient(155deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:11px;min-width:0;box-shadow:var(--shadow);transition:transform .2s,border-color .2s}
-.card:hover{transform:translateY(-3px);border-color:var(--accent)}
-.product-art{height:112px;border-radius:13px;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,#ffbd5b55,transparent 38%),linear-gradient(135deg,#ff7a1822,#6b5cff22);font-size:43px}
-.tag{font-size:12px;color:var(--accent2);letter-spacing:1.2px;text-transform:uppercase;font-weight:700}.card h3{margin:0;font-size:19px;line-height:1.25}.card p{margin:0;color:var(--muted);font-size:14px;flex:1}.meta{font-size:12px;color:var(--muted)}
-.card-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:4px}.price{font:25px Russo One,Impact,sans-serif}.small-btn{border:0;border-radius:10px;padding:10px 14px;background:var(--accent);color:#1b0d04;font-weight:700}
-.empty{padding:25px;text-align:center;border:1px dashed var(--line);border-radius:14px;color:var(--muted);grid-column:1/-1}
-.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:0 0 40px}.info{border-top:2px solid var(--accent);padding:14px 0}.info h3{margin:0 0 5px;font-size:17px}.info p{margin:0;color:var(--muted);font-size:14px}
-footer{border-top:1px solid var(--line);padding:22px 0 38px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.notice{border:1px solid #ffbd5b66;background:#ffbd5b12;color:var(--text);border-radius:12px;padding:12px 14px;margin:0 0 20px;font-size:14px}
-.veil{position:fixed;inset:0;background:#000b;display:flex;align-items:flex-end;justify-content:center;z-index:20;padding:0}
-.sheet{background:var(--panel);border:1px solid var(--line);border-radius:22px 22px 0 0;width:100%;max-width:500px;max-height:94dvh;overflow:auto;padding:20px 18px calc(22px + env(safe-area-inset-bottom,0px));box-shadow:var(--shadow)}
-@media(min-width:650px){.veil{align-items:center;padding:18px}.sheet{border-radius:22px}}
-.sheet-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.sheet h3{font:22px Russo One;margin:0}.close{background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:24px;width:42px;height:42px}
-.amount{font:36px Russo One;color:var(--accent2);margin:7px 0 14px}.qrbox{background:#fff;border-radius:14px;padding:12px;width:max-content;max-width:100%;margin:0 auto}.qrbox img,.qrbox canvas{max-width:100%;height:auto!important}
-.kv{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--panel2);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:14px}.kv span{color:var(--muted)}.kv b{word-break:break-all;text-align:right}.copy{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:8px;padding:5px 9px}
-.steps{padding-left:20px;color:var(--muted);font-size:14px}.actions{display:grid;gap:9px;margin-top:14px}.actions .btn{width:100%}.note{font-size:12px;color:var(--muted)}
-.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--text);color:var(--bg);padding:10px 16px;border-radius:999px;z-index:40;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trust,.info-grid{grid-template-columns:1fr}.hero{padding-top:38px}}
-@media(max-width:430px){.wrap{width:calc(100% - 22px)}.grid{grid-template-columns:1fr}.card{padding:15px}.controls{grid-template-columns:1fr}.hero p{font-size:16px}.brand{font-size:18px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+:root { --neon:#00ff41; --danger:#ff003c; --gold:#ffea00; --bg:#050505; }
+
+body{
+background:var(--bg);
+color:#fff;
+font-family:'Segoe UI',sans-serif;
+margin:0;
+overflow-x:hidden;
+}
+
+.header-container{
+text-align:center;
+padding:30px 10px;
+}
+
+.zigzag-name{
+font-size:38px;
+font-weight:900;
+letter-spacing:5px;
+text-transform:uppercase;
+text-shadow:2px 2px var(--danger),-2px -2px var(--neon),0 0 20px var(--neon);
+animation:glitch 1.5s infinite;
+}
+
+@keyframes glitch{
+0%{transform:skew(0)}
+20%{transform:skew(-3deg)}
+40%{transform:skew(3deg)}
+100%{transform:skew(0)}
+}
+
+.glass-box{
+max-width:400px;
+margin:0 auto 20px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(0,255,65,0.2);
+border-radius:25px;
+padding:25px;
+backdrop-filter:blur(15px);
+text-align:center;
+}
+
+.pred-val{
+font-size:55px;
+font-weight:900;
+margin:10px 0;
+text-shadow:0 0 20px var(--neon);
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+font-size:11px;
+}
+
+th{
+color:#888;
+border-bottom:1px solid #222;
+padding:8px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #111;
+text-align:center;
+}
+
+.win{color:var(--neon);font-weight:bold;}
+.loss{color:var(--danger);font-weight:bold;}
+
+.footer-branding{
+margin-top:30px;
+padding:15px;
+text-align:center;
+}
+
+.name-box{
+display:inline-block;
+padding:10px 30px;
+border:1px solid var(--neon);
+border-radius:5px;
+color:var(--neon);
+font-weight:bold;
+letter-spacing:3px;
+cursor:pointer;
+background:rgba(0,255,65,0.05);
+}
+
+.admin-modal{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90%;
+max-width:350px;
+background:#000;
+border:2px solid var(--gold);
+border-radius:20px;
+padding:20px;
+z-index:1000;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+z-index:999;
+display:none;
+}
+
+.hidden{display:none;}
+
+/* REAL VIBE VISUAL UPGRADE — styling only; JavaScript logic unchanged */
+:root{--neon:#00ff9d;--danger:#ff3158;--gold:#ffe66d;--bg:#030609}
+body{background:radial-gradient(ellipse at 50% -15%,rgba(0,255,157,.14),transparent 48%),radial-gradient(ellipse at 100% 55%,rgba(255,49,88,.07),transparent 35%),#030609;min-height:100vh;position:relative;isolation:isolate}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.17;background-image:linear-gradient(rgba(0,255,157,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,157,.16) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 90%);animation:gridDrift 18s linear infinite}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.10;background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,rgba(255,255,255,.10) 4px)}
+@keyframes gridDrift{to{background-position:34px 34px}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes neonPulse{0%,100%{text-shadow:0 0 10px rgba(0,255,157,.45),0 0 24px rgba(0,255,157,.15)}50%{text-shadow:0 0 18px rgba(0,255,157,.9),0 0 38px rgba(0,255,157,.35)}}
+@keyframes borderFlow{0%,100%{border-color:rgba(0,255,157,.28)}50%{border-color:rgba(0,255,157,.85)}}
+@keyframes shine{0%{transform:translateX(-150%) skewX(-20deg)}100%{transform:translateX(250%) skewX(-20deg)}}
+.header-container{padding:36px 12px 24px;animation:fadeUp .7s ease both}
+.zigzag-name{font-size:clamp(34px,8vw,48px);letter-spacing:clamp(4px,1.4vw,8px);color:#f4fff9;animation:glitch 1.5s infinite,neonPulse 2.8s ease-in-out infinite}
+.glass-box{width:calc(100% - 32px);box-sizing:border-box;padding:24px 18px;border:1px solid rgba(0,255,157,.35);background:linear-gradient(145deg,rgba(9,24,24,.92),rgba(5,9,15,.86));box-shadow:0 0 35px rgba(0,255,157,.07),inset 0 1px 0 rgba(255,255,255,.06);position:relative;overflow:hidden;animation:fadeUp .8s .12s ease both,borderFlow 4s ease-in-out infinite}
+.glass-box:before{content:"";position:absolute;top:0;left:0;width:40%;height:1px;background:linear-gradient(90deg,transparent,var(--neon),transparent);animation:shine 5s ease-in-out infinite}
+#pID{letter-spacing:2px;font-size:12px!important;color:#9aa8ad!important}
+.pred-val{color:var(--neon);font-size:clamp(48px,12vw,64px);line-height:1.15;margin:16px 0!important;animation:neonPulse 2.2s ease-in-out infinite}
+#pOpps{border-radius:12px;background:rgba(255,230,109,.045);box-shadow:inset 0 0 20px rgba(255,230,109,.025);letter-spacing:1px}
+table{border-spacing:0;border-collapse:separate;overflow:hidden;border:1px solid rgba(255,255,255,.06);border-radius:12px;background:rgba(0,0,0,.2)}
+th{color:#9ba8ad;background:rgba(255,255,255,.035);letter-spacing:1px;font-size:10px}
+td{font-size:12px;color:#e7f3ee}
+tbody tr{animation:fadeUp .35s ease both;transition:background .2s ease}
+tbody tr:hover{background:rgba(0,255,157,.055)}
+.win{color:var(--neon)!important;text-shadow:0 0 9px rgba(0,255,157,.25)}
+.loss{color:var(--danger)!important;text-shadow:0 0 9px rgba(255,49,88,.2)}
+.footer-branding{padding-bottom:32px;animation:fadeUp 1s .25s ease both}
+.name-box{position:relative;overflow:hidden;border-color:rgba(0,255,157,.7);border-radius:12px;background:linear-gradient(135deg,rgba(0,255,157,.12),rgba(0,255,157,.025));box-shadow:0 0 22px rgba(0,255,157,.08);transition:transform .2s ease,box-shadow .2s ease}
+.name-box:after{content:"";position:absolute;top:-20%;left:-120%;width:55%;height:140%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+.name-box:active{transform:scale(.97);box-shadow:0 0 28px rgba(0,255,157,.18)}
+.admin-modal{box-sizing:border-box;box-shadow:0 0 45px rgba(255,230,109,.12);animation:fadeUp .25s ease both}
+button{cursor:pointer;transition:filter .2s ease,transform .2s ease}
+button:hover{filter:brightness(1.08)}
+button:active{transform:scale(.98)}
+@media(max-width:420px){.header-container{padding-top:28px}.glass-box{padding:20px 12px;border-radius:20px}th{padding:8px 3px}td{padding:9px 3px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+
+.accuracy-panel{margin-top:16px;padding:15px 12px;border:1px solid rgba(0,255,157,.25);border-radius:15px;background:linear-gradient(135deg,rgba(0,255,157,.055),rgba(255,255,255,.015));text-align:left}
+.accuracy-title{font-size:10px;letter-spacing:2px;color:#9ba8ad;text-align:center;margin-bottom:12px}
+.accuracy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.accuracy-stat{min-width:0;padding:10px 4px;text-align:center;border-radius:10px;background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.045)}
+.accuracy-stat span{display:block;font-size:clamp(18px,5vw,25px);font-weight:900;color:var(--neon);text-shadow:0 0 12px rgba(0,255,157,.2)}
+.accuracy-stat small{display:block;margin-top:5px;font-size:9px;color:#a4b2b2;letter-spacing:.3px}
+.accuracy-note{font-size:10px;line-height:1.5;color:#7f9191;margin-top:10px;text-align:center}
+
+
+.jackpot-banner{margin:14px 0 4px;padding:15px 10px;border:1px solid #ffe66d;border-radius:14px;background:radial-gradient(ellipse at center,rgba(255,230,109,.18),rgba(255,180,0,.035));box-shadow:0 0 20px rgba(255,210,50,.16);text-align:center;animation:jackpotPop .45s cubic-bezier(.2,.8,.2,1) both,jackpotGlow 1.4s ease-in-out infinite}
+.jackpot-flash{font-size:clamp(23px,7vw,32px);font-weight:1000;letter-spacing:3px;color:#ffe66d;text-shadow:0 0 9px rgba(255,230,109,.8),0 0 25px rgba(255,180,0,.45)}
+.jackpot-sub{margin-top:5px;font-size:10px;letter-spacing:2px;color:#fff2b0}
+@keyframes jackpotPop{from{opacity:0;transform:scale(.7) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes jackpotGlow{0%,100%{box-shadow:0 0 14px rgba(255,210,50,.12)}50%{box-shadow:0 0 30px rgba(255,210,50,.36)}}
+.hidden{display:none}
+
+
+.jackpot-status{color:#ffe66d!important;font-weight:1000;letter-spacing:.4px;text-shadow:0 0 8px rgba(255,210,50,.8),0 0 18px rgba(255,120,0,.45);animation:jackpotText .8s ease-in-out infinite alternate}
+.jackpot-banner{position:relative;isolation:isolate;overflow:hidden;margin:16px 0 6px;padding:22px 10px 18px;border:1px solid #ffe66d;border-radius:18px;background:radial-gradient(ellipse at center,rgba(255,211,64,.2),rgba(95,35,0,.1) 55%,rgba(0,0,0,.3));box-shadow:0 0 24px rgba(255,196,0,.22),inset 0 0 25px rgba(255,170,0,.08);animation:jackpotEntrance .55s cubic-bezier(.2,.8,.2,1) both}
+.jackpot-content{position:relative;z-index:2}
+.jackpot-crown{font-size:clamp(25px,7vw,36px);font-weight:1000;letter-spacing:3px;color:#fff1a6;text-shadow:0 0 8px #ffce35,0 0 24px #ff7b00;animation:jackpotText .55s ease-in-out infinite alternate}
+.jackpot-sub{margin-top:7px;font-size:11px;letter-spacing:3px;color:#fff}
+.jackpot-party{font-size:clamp(25px,8vw,40px);letter-spacing:3px;margin:12px 0;animation:partyBounce .65s ease-in-out infinite alternate;filter:drop-shadow(0 0 9px rgba(255,200,30,.45))}
+.jackpot-message{font-size:11px;font-weight:900;letter-spacing:3px;color:#ffe66d}
+.jackpot-confetti{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+@keyframes jackpotEntrance{0%{opacity:0;transform:scale(.65) rotate(-2deg)}65%{opacity:1;transform:scale(1.04) rotate(1deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes jackpotText{from{filter:brightness(1);transform:scale(1)}to{filter:brightness(1.45);transform:scale(1.035)}}
+@keyframes partyBounce{from{transform:translateY(2px) scale(.97)}to{transform:translateY(-5px) scale(1.05)}}
+
 </style>
 </head>
+
 <body>
-<div class="wrap">
-<header>
-  <a class="brand" href="#top" aria-label="Prince YT Store home"><span class="logo">PY</span> PRINCE <span style="color:var(--accent)">YT STORE</span></a>
-  <div class="head-actions">
-    <button class="icon-btn" id="themeBtn" type="button" aria-label="Theme badlo">☀️ Theme</button>
-    <a class="pill" id="tgTop" href="#" target="_blank" rel="noopener">Telegram ↗</a>
-  </div>
-</header>
 
-<main>
-<section class="hero" id="top">
-  <span class="eyebrow">✦ Creator tools • Digital downloads</span>
-  <h1>Apne content ko do <span>next-level</span> look.</h1>
-  <p>Creator templates aur digital files ek jagah. Product ki details aur price pehle dekho; payment se pehle seller ki details verify karna.</p>
-  <div class="hero-actions">
-    <a class="btn" href="#shop">🛍️ Products dekho</a>
-    <button class="btn secondary" id="installBtn" type="button" hidden>📲 Install app</button>
-  </div>
-</section>
-
-<section class="trust" aria-label="Store details">
-  <article><b>🏷️ Clear pricing</b><span>Product card par price aur file details.</span></article>
-  <article><b>📱 Mobile friendly</b><span>Phone aur desktop dono par responsive.</span></article>
-  <article><b>🤝 Manual confirmation</b><span>Payment seller verify karega; website auto-verify nahi karti.</span></article>
-</section>
-
-<section id="shop">
-  <div class="section-head"><div><h2>Featured products</h2><p class="muted">Search karo ya category filter chuno.</p></div></div>
-  <div class="notice" id="setupNotice">Setup pending: abhi UPI ID aur Telegram username sample placeholders hain. Real payment lene se pehle code mein apni correct details set karo. Products bhi demo hain.</div>
-  <div class="controls">
-    <input class="search" id="search" type="search" placeholder="🔎 Product search..." aria-label="Products search">
-    <button class="btn secondary" id="clearSearch" type="button">Clear</button>
-  </div>
-  <div class="filters" id="filters" aria-label="Product categories"></div>
-  <div class="grid" id="grid" aria-live="polite"></div>
-</section>
-
-<section class="info-grid" id="help">
-  <article class="info"><h3>💳 Payment</h3><p>Buy dabane par order amount aur UPI QR dikhte hain. Pay karne se pehle naam aur amount apne UPI app mein check karna.</p></article>
-  <article class="info"><h3>📦 Delivery</h3><p>Delivery ka tareeka aur expected time seller se confirm karo. Screenshot bhejne ka button sirf Telegram chat kholta hai.</p></article>
-  <article class="info"><h3>↩️ Refund & support</h3><p>Purchase se pehle refund terms seller se confirm karna. Apna UPI PIN, OTP ya password kisi ko mat dena.</p></article>
-</section>
-</main>
-<footer><span>© <span id="year"></span> Prince YT Store</span><span>Made for creators • <a id="tgFoot" href="#" target="_blank" rel="noopener">Contact support</a></span></footer>
+<div class="header-container">
+<div style="font-size:10px;color:#7d9290;letter-spacing:3px;margin-bottom:12px;">● SYSTEM ONLINE</div>
+<div class="zigzag-name">FAB VIP</div>
+<div style="color:var(--gold);font-size:10px;letter-spacing:4px;margin-top:5px;">
+STRICT LOGIC V15
+</div>
 </div>
 
-<div class="veil" id="veil" hidden>
-  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sTitle">
-    <div class="sheet-top"><h3 id="sTitle">Product</h3><button class="close" id="close" type="button" aria-label="Close">×</button></div>
-    <div class="amount" id="sAmt">₹0</div>
-    <div class="qrbox"><div id="qr"></div></div>
-    <div class="kv"><span>UPI ID</span><b id="sUpi"></b><button class="copy" id="cpUpi" type="button">Copy</button></div>
-    <div class="kv"><span>Order note</span><b id="sNote"></b><button class="copy" id="cpNote" type="button">Copy</button></div>
-    <ol class="steps"><li>UPI app mein payee name aur exact amount verify karo.</li><li>Payment note mein order note daalo, agar app allow kare.</li><li>Payment ke baad seller se delivery confirm karo.</li></ol>
-    <div class="actions"><a class="btn" id="sUpiLink" href="#">Open UPI app</a><a class="btn secondary" id="sTg" href="#" target="_blank" rel="noopener">Telegram par order details bhejo ↗</a></div>
-    <p class="note">Important: payment auto-verify nahi hota. Payment karne se pehle UPI app mein details check karo. Kabhi bhi UPI PIN/OTP share mat karo.</p>
-  </div>
+<div class="glass-box">
+<div style="color:#888;font-size:13px;" id="pID">PERIOD: ---</div>
+<div class="pred-val" id="pRes">WAIT...</div>
+<div style="color:var(--gold);font-size:13px;font-weight:bold;border:1px dashed var(--gold);padding:8px;" id="pOpps">
+ANALYZING...
 </div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="config.js"></script>
+
+<div id="jackpotBanner" class="jackpot-banner hidden" role="status">
+  <div class="jackpot-burst" aria-hidden="true"></div>
+  <div class="jackpot-content">
+    <div class="jackpot-crown">✦ JACKPOT ✦</div>
+    <div class="jackpot-sub">EXACT NUMBER HIT!</div>
+    <div class="jackpot-party">🎉 🎊 🥳 🎊 🎉</div>
+    <div class="jackpot-message">BOOM! PERFECT HIT!</div>
+  </div>
+  <canvas id="jackpotConfetti" class="jackpot-confetti" aria-hidden="true"></canvas>
+</div>
+
+<div class="accuracy-panel" aria-live="polite">
+  <div class="accuracy-title">LIVE ACCURACY TRACKER</div>
+  <div class="accuracy-grid">
+    <div class="accuracy-stat"><span id="accRate">0.0%</span><small>Prediction accuracy</small></div>
+    <div class="accuracy-stat"><span id="accWins">0</span><small>Correct</small></div>
+    <div class="accuracy-stat"><span id="accTotal">0</span><small>Tested rounds</small></div>
+  </div>
+  <div class="accuracy-note">Counts rounds observed while this page is open. Past accuracy does not guarantee future results.</div>
+</div>
+
+
+<table>
+<thead>
+<tr>
+<th>PRD</th>
+<th>PRED</th>
+<th>NUM</th>
+<th>STATUS</th>
+</tr>
+</thead>
+<tbody id="logs"></tbody>
+</table>
+</div>
+
+<div class="footer-branding">
+<div class="name-box" onclick="triggerAdmin()">FAB VIP</div>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeAdmin()"></div>
+
+<div id="adminPanel" class="admin-modal hidden">
+<h3 style="color:var(--gold);text-align:center;margin-top:0;">
+MASTER CONTROL
+</h3>
+
+<button onclick="closeAdmin()" style="width:100%;padding:12px;background:var(--gold);border:none;border-radius:10px;font-weight:bold;">
+CLOSE
+</button>
+</div>
+
 <script>
-'use strict';
-const DEFAULT_STORE = {name:'Prince YT', upiId:'yourname@upi', payeeName:'Prince YT', telegram:'your_username'};
-let STORE = {...DEFAULT_STORE};
-let PRODUCTS = [
- {id:'thumb',tag:'Thumbnails',icon:'🎮',name:'Gaming Thumbnail Pack',price:99,desc:'10 editable thumbnail templates. Apni photo aur text lagao.',meta:'PSD + PNG preview • ZIP'},
- {id:'overlay',tag:'Stream',icon:'🖥️',name:'Stream Overlay Set',price:149,desc:'Stream ke liye overlay graphics ka demo listing.',meta:'PNG files • ZIP'},
- {id:'logo',tag:'Branding',icon:'⚡',name:'Channel Logo Template',price:199,desc:'Editable logo template ka demo listing.',meta:'SVG + PNG'}
-];
-if (window.STORE_CONFIG) {
- if (window.STORE_CONFIG.store) STORE = {...STORE,...window.STORE_CONFIG.store};
- if (Array.isArray(window.STORE_CONFIG.products) && window.STORE_CONFIG.products.length) PRODUCTS = window.STORE_CONFIG.products;
+const ADMIN_PASS="Fab009";
+const B_POOL=[5,6,7,8,9];
+const S_POOL=[0,1,2,3,4];
+
+let currentOpposites=[];
+let lastId=null;
+let savedPrediction=null;
+let savedOpps=[];
+let accuracyWins=0;
+let accuracyTotal=0;
+
+function runLogic(){
+
+setInterval(async()=>{
+
+try{
+
+const res=await fetch('https://draw.ar-lottery01.com/WinGo/WinGo_30S/GetHistoryIssuePage.json');
+const json=await res.json();
+const latest=json.data.list[0];
+
+const last5=json.data.list.slice(0,5)
+.map(x=>parseInt(x.number)>=5?"BIG":"SMALL");
+
+const nextPred=last5.filter(x=>x==="BIG").length>2?"BIG":"SMALL";
+
+if(lastId!==latest.issueNumber){
+
+const actualNum=parseInt(latest.number);
+const actualSize=actualNum>=5?"BIG":"SMALL";
+
+if(lastId){
+
+const isWin=(savedPrediction===actualSize)
+|| savedOpps.includes(actualNum);
+
+// Separate accuracy score: only the BIG/SMALL prediction is counted here.
+const exactNumberHit=savedOpps.includes(actualNum);
+const jackpotBanner=document.getElementById('jackpotBanner');
+if(jackpotBanner){
+  jackpotBanner.classList.toggle('hidden', !exactNumberHit);
+  if(exactNumberHit) launchJackpotConfetti();
 }
-const configured = STORE.upiId !== DEFAULT_STORE.upiId && STORE.telegram !== DEFAULT_STORE.telegram &&
- STORE.upiId.includes('@') && !STORE.telegram.includes('your_username');
-const setupNotice = document.getElementById('setupNotice');
-if (configured) setupNotice.hidden = true;
-const tgUrl = STORE.telegram && !STORE.telegram.includes('your_username') ? 'https://t.me/' + STORE.telegram.replace(/^@/,'') : 'https://t.me/';
-['tgTop','tgFoot'].forEach(id => document.getElementById(id).href = tgUrl);
-document.getElementById('year').textContent = new Date().getFullYear();
+const predictionCorrect=(savedPrediction===actualSize) || exactNumberHit;
+accuracyTotal++;
+if(predictionCorrect) accuracyWins++;
+document.getElementById('accWins').innerText=accuracyWins;
+document.getElementById('accTotal').innerText=accuracyTotal;
+document.getElementById('accRate').innerText=
+  (accuracyWins/accuracyTotal*100).toFixed(1) + "%";
 
-const grid = document.getElementById('grid'), filters = document.getElementById('filters');
-let activeCategory = 'All';
-const categories = ['All', ...new Set(PRODUCTS.map(p => p.tag || 'Other'))];
-categories.forEach(cat => {
- const b = document.createElement('button'); b.type='button'; b.className='filter'+(cat==='All'?' active':''); b.textContent=cat;
- b.addEventListener('click',()=>{activeCategory=cat; [...filters.children].forEach(x=>x.classList.toggle('active',x===b)); renderProducts();});
- filters.appendChild(b);
-});
-function renderProducts(){
- const q = document.getElementById('search').value.trim().toLowerCase(); grid.replaceChildren();
- const list = PRODUCTS.filter(p => (activeCategory==='All'||(p.tag||'Other')===activeCategory) &&
-  [p.name,p.tag,p.desc,p.meta].join(' ').toLowerCase().includes(q));
- if(!list.length){const e=document.createElement('div');e.className='empty';e.textContent='Koi product nahi mila. Search badal kar dekho.';grid.appendChild(e);return;}
- list.forEach(p=>{
-  const c=document.createElement('article');c.className='card';
-  const art=document.createElement('div');art.className='product-art';art.textContent=p.icon||'✨';art.setAttribute('aria-hidden','true');
-  const tag=document.createElement('div');tag.className='tag';tag.textContent=p.tag||'Other';
-  const h=document.createElement('h3');h.textContent=p.name;
-  const d=document.createElement('p');d.textContent=p.desc||'Digital product';
-  const m=document.createElement('div');m.className='meta';m.textContent=p.meta||'Digital download';
-  const foot=document.createElement('div');foot.className='card-foot';
-  const price=document.createElement('div');price.className='price';price.textContent='₹'+Number(p.price||0).toLocaleString('en-IN');
-  const buy=document.createElement('button');buy.className='small-btn';buy.type='button';buy.textContent='Details / Buy';
-  buy.addEventListener('click',()=>openSheet(p));
-  foot.append(price,buy);c.append(art,tag,h,d,m,foot);grid.appendChild(c);
- });
+const row=`
+<tr>
+<td>${latest.issueNumber.slice(-3)}</td>
+<td>${savedPrediction}</td>
+<td>${actualNum}</td>
+<td class="${exactNumberHit?'jackpot-status':(isWin?'win':'loss')}">
+ ${exactNumberHit?'🎉 JACKPOT 🎉':(isWin?'WIN':'LOSS')}
+</td>
+</tr>`;
+
+document.getElementById('logs').innerHTML=
+row+document.getElementById('logs').innerHTML;
 }
-document.getElementById('search').addEventListener('input',renderProducts);
-document.getElementById('clearSearch').addEventListener('click',()=>{document.getElementById('search').value='';activeCategory='All';[...filters.children].forEach(x=>x.classList.toggle('active',x.textContent==='All'));renderProducts();});
-renderProducts();
 
-const veil=document.getElementById('veil'), qrHost=document.getElementById('qr');let lastFocus=null;
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800);}
-function orderNote(p){return 'PYT-'+String(p.id||'item').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,12)+'-'+Math.floor(1000+Math.random()*9000);}
-function upiLink(p,note){return 'upi://pay?pa='+encodeURIComponent(STORE.upiId)+'&pn='+encodeURIComponent(STORE.payeeName)+'&am='+Number(p.price).toFixed(2)+'&cu=INR&tn='+encodeURIComponent(note);}
-function openSheet(p){
- if(!Number.isFinite(Number(p.price))||Number(p.price)<=0){toast('Is product ka price setup karo.');return;}
- if(!configured){toast('Pehle UPI ID aur Telegram username configure karo.');return;}
- lastFocus=document.activeElement;const note=orderNote(p),link=upiLink(p,note);
- document.getElementById('sTitle').textContent=p.name;document.getElementById('sAmt').textContent='₹'+Number(p.price).toLocaleString('en-IN');
- document.getElementById('sUpi').textContent=STORE.upiId;document.getElementById('sNote').textContent=note;
- document.getElementById('sUpiLink').href=link;
- const msg='Hello! Order details:\\nProduct: '+p.name+'\\nAmount: ₹'+p.price+'\\nOrder note: '+note+'\\nPlease confirm availability and delivery.';
- document.getElementById('sTg').href=tgUrl+'?text='+encodeURIComponent(msg);
- qrHost.replaceChildren();
- if(window.QRCode){new QRCode(qrHost,{text:link,width:220,height:220,correctLevel:QRCode.CorrectLevel.M});}
- else {const fallback=document.createElement('p');fallback.textContent='QR library load nahi hui. UPI app button use karo.';qrHost.appendChild(fallback);}
- veil.hidden=false;document.getElementById('close').focus();
+lastId=latest.issueNumber;
+savedPrediction=nextPred;
+
+const pool=nextPred==="BIG"?S_POOL:B_POOL;
+currentOpposites=pool.sort(()=>0.5-Math.random()).slice(0,2);
+savedOpps=currentOpposites;
 }
-function closeSheet(){veil.hidden=true;if(lastFocus)lastFocus.focus();}
-document.getElementById('close').addEventListener('click',closeSheet);
-veil.addEventListener('click',e=>{if(e.target===veil)closeSheet();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!veil.hidden)closeSheet();});
-function copyText(srcId,btnId){const b=document.getElementById(btnId),text=document.getElementById(srcId).textContent;
- if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(()=>toast('Copied!')).catch(()=>toast(text));
- else toast(text);}
-document.getElementById('cpUpi').addEventListener('click',()=>copyText('sUpi','cpUpi'));
-document.getElementById('cpNote').addEventListener('click',()=>copyText('sNote','cpNote'));
 
-const root=document.documentElement,themeBtn=document.getElementById('themeBtn');
-const savedTheme=localStorage.getItem('pyt-theme');if(savedTheme==='light')root.classList.add('light');
-function syncTheme(){themeBtn.textContent=root.classList.contains('light')?'🌙 Dark':'☀️ Light';}
-syncTheme();themeBtn.addEventListener('click',()=>{root.classList.toggle('light');localStorage.setItem('pyt-theme',root.classList.contains('light')?'light':'dark');syncTheme();});
+document.getElementById('pID').innerText=
+"PERIOD: "+(BigInt(latest.issueNumber)+1n).toString();
 
-let deferredPrompt=null;const installBtn=document.getElementById('installBtn');
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.hidden=false;});
-installBtn.addEventListener('click',async()=>{if(!deferredPrompt){toast('Chrome menu ⋮ se “Add to Home screen” chuno.');return;}deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.hidden=true;});
-if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+document.getElementById('pRes').innerText=nextPred;
+document.getElementById('pOpps').innerText=
+"OPPOSITE NUMS: "+currentOpposites.join(", ");
+
+}catch(e){}
+
+},3000);
+}
+
+
+function launchJackpotConfetti(){
+  const canvas=document.getElementById('jackpotConfetti');
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  const rect=canvas.getBoundingClientRect();
+  const dpr=window.devicePixelRatio||1;
+  canvas.width=Math.max(1,rect.width*dpr);
+  canvas.height=Math.max(1,rect.height*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const w=rect.width,h=rect.height;
+  const bits=[];
+  const colors=['#ffe66d','#00ff9d','#ff3158','#ffffff','#ff8a00','#a78bfa'];
+  for(let i=0;i<150;i++){
+    bits.push({x:w/2+(Math.random()-.5)*w*.25,y:h*.62,
+      vx:(Math.random()-.5)*9,vy:-Math.random()*8-2,
+      g:.16+Math.random()*.12,size:3+Math.random()*5,
+      rot:Math.random()*Math.PI,spin:(Math.random()-.5)*.22,
+      color:colors[Math.floor(Math.random()*colors.length)],
+      life:70+Math.random()*35});
+  }
+  let frame=0;
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(const b of bits){
+      b.x+=b.vx;b.y+=b.vy;b.vy+=b.g;b.rot+=b.spin;b.life--;
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate(b.rot);
+      ctx.globalAlpha=Math.max(0,Math.min(1,b.life/25));
+      ctx.fillStyle=b.color;ctx.fillRect(-b.size/2,-b.size/2,b.size,b.size*1.5);
+      ctx.restore();
+    }
+    frame++;
+    if(frame<105) requestAnimationFrame(draw);
+    else ctx.clearRect(0,0,w,h);
+  }
+  requestAnimationFrame(draw);
+}
+
+function triggerAdmin(){
+if(prompt("PASSWORD:")===ADMIN_PASS){
+document.getElementById('adminPanel').classList.remove('hidden');
+document.getElementById('overlay').style.display="block";
+}
+}
+
+function closeAdmin(){
+document.getElementById('adminPanel').classList.add('hidden');
+document.getElementById('overlay').style.display="none";
+}
+
+runLogic();
 </script>
+
 </body>
 </html>
