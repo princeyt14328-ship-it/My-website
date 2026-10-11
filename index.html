@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAB VIP SUPREME V15</title>
+
+<style>
+:root { --neon:#00ff41; --danger:#ff003c; --gold:#ffea00; --bg:#050505; }
+
+body{
+background:var(--bg);
+color:#fff;
+font-family:'Segoe UI',sans-serif;
+margin:0;
+overflow-x:hidden;
+}
+
+.header-container{
+text-align:center;
+padding:30px 10px;
+}
+
+.zigzag-name{
+font-size:38px;
+font-weight:900;
+letter-spacing:5px;
+text-transform:uppercase;
+text-shadow:2px 2px var(--danger),-2px -2px var(--neon),0 0 20px var(--neon);
+animation:glitch 1.5s infinite;
+}
+
+@keyframes glitch{
+0%{transform:skew(0)}
+20%{transform:skew(-3deg)}
+40%{transform:skew(3deg)}
+100%{transform:skew(0)}
+}
+
+.glass-box{
+max-width:400px;
+margin:0 auto 20px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(0,255,65,0.2);
+border-radius:25px;
+padding:25px;
+backdrop-filter:blur(15px);
+text-align:center;
+}
+
+.pred-val{
+font-size:55px;
+font-weight:900;
+margin:10px 0;
+text-shadow:0 0 20px var(--neon);
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+font-size:11px;
+}
+
+th{
+color:#888;
+border-bottom:1px solid #222;
+padding:8px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #111;
+text-align:center;
+}
+
+.win{color:var(--neon);font-weight:bold;}
+.loss{color:var(--danger);font-weight:bold;}
+
+.footer-branding{
+margin-top:30px;
+padding:15px;
+text-align:center;
+}
+
+.name-box{
+display:inline-block;
+padding:10px 30px;
+border:1px solid var(--neon);
+border-radius:5px;
+color:var(--neon);
+font-weight:bold;
+letter-spacing:3px;
+cursor:pointer;
+background:rgba(0,255,65,0.05);
+}
+
+.admin-modal{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90%;
+max-width:350px;
+background:#000;
+border:2px solid var(--gold);
+border-radius:20px;
+padding:20px;
+z-index:1000;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+z-index:999;
+display:none;
+}
+
+.hidden{display:none;}
+
+/* REAL VIBE VISUAL UPGRADE — styling only; JavaScript logic unchanged */
+:root{--neon:#00ff9d;--danger:#ff3158;--gold:#ffe66d;--bg:#030609}
+body{background:radial-gradient(ellipse at 50% -15%,rgba(0,255,157,.14),transparent 48%),radial-gradient(ellipse at 100% 55%,rgba(255,49,88,.07),transparent 35%),#030609;min-height:100vh;position:relative;isolation:isolate}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.17;background-image:linear-gradient(rgba(0,255,157,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,157,.16) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 90%);animation:gridDrift 18s linear infinite}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.10;background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,rgba(255,255,255,.10) 4px)}
+@keyframes gridDrift{to{background-position:34px 34px}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes neonPulse{0%,100%{text-shadow:0 0 10px rgba(0,255,157,.45),0 0 24px rgba(0,255,157,.15)}50%{text-shadow:0 0 18px rgba(0,255,157,.9),0 0 38px rgba(0,255,157,.35)}}
+@keyframes borderFlow{0%,100%{border-color:rgba(0,255,157,.28)}50%{border-color:rgba(0,255,157,.85)}}
+@keyframes shine{0%{transform:translateX(-150%) skewX(-20deg)}100%{transform:translateX(250%) skewX(-20deg)}}
+.header-container{padding:36px 12px 24px;animation:fadeUp .7s ease both}
+.zigzag-name{font-size:clamp(34px,8vw,48px);letter-spacing:clamp(4px,1.4vw,8px);color:#f4fff9;animation:glitch 1.5s infinite,neonPulse 2.8s ease-in-out infinite}
+.glass-box{width:calc(100% - 32px);box-sizing:border-box;padding:24px 18px;border:1px solid rgba(0,255,157,.35);background:linear-gradient(145deg,rgba(9,24,24,.92),rgba(5,9,15,.86));box-shadow:0 0 35px rgba(0,255,157,.07),inset 0 1px 0 rgba(255,255,255,.06);position:relative;overflow:hidden;animation:fadeUp .8s .12s ease both,borderFlow 4s ease-in-out infinite}
+.glass-box:before{content:"";position:absolute;top:0;left:0;width:40%;height:1px;background:linear-gradient(90deg,transparent,var(--neon),transparent);animation:shine 5s ease-in-out infinite}
+#pID{letter-spacing:2px;font-size:12px!important;color:#9aa8ad!important}
+.pred-val{color:var(--neon);font-size:clamp(48px,12vw,64px);line-height:1.15;margin:16px 0!important;animation:neonPulse 2.2s ease-in-out infinite}
+#pOpps{border-radius:12px;background:rgba(255,230,109,.045);box-shadow:inset 0 0 20px rgba(255,230,109,.025);letter-spacing:1px}
+table{border-spacing:0;border-collapse:separate;overflow:hidden;border:1px solid rgba(255,255,255,.06);border-radius:12px;background:rgba(0,0,0,.2)}
+th{color:#9ba8ad;background:rgba(255,255,255,.035);letter-spacing:1px;font-size:10px}
+td{font-size:12px;color:#e7f3ee}
+tbody tr{animation:fadeUp .35s ease both;transition:background .2s ease}
+tbody tr:hover{background:rgba(0,255,157,.055)}
+.win{color:var(--neon)!important;text-shadow:0 0 9px rgba(0,255,157,.25)}
+.loss{color:var(--danger)!important;text-shadow:0 0 9px rgba(255,49,88,.2)}
+.footer-branding{padding-bottom:32px;animation:fadeUp 1s .25s ease both}
+.name-box{position:relative;overflow:hidden;border-color:rgba(0,255,157,.7);border-radius:12px;background:linear-gradient(135deg,rgba(0,255,157,.12),rgba(0,255,157,.025));box-shadow:0 0 22px rgba(0,255,157,.08);transition:transform .2s ease,box-shadow .2s ease}
+.name-box:after{content:"";position:absolute;top:-20%;left:-120%;width:55%;height:140%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+.name-box:active{transform:scale(.97);box-shadow:0 0 28px rgba(0,255,157,.18)}
+.admin-modal{box-sizing:border-box;box-shadow:0 0 45px rgba(255,230,109,.12);animation:fadeUp .25s ease both}
+button{cursor:pointer;transition:filter .2s ease,transform .2s ease}
+button:hover{filter:brightness(1.08)}
+button:active{transform:scale(.98)}
+@media(max-width:420px){.header-container{padding-top:28px}.glass-box{padding:20px 12px;border-radius:20px}th{padding:8px 3px}td{padding:9px 3px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+
+.accuracy-panel{margin-top:16px;padding:15px 12px;border:1px solid rgba(0,255,157,.25);border-radius:15px;background:linear-gradient(135deg,rgba(0,255,157,.055),rgba(255,255,255,.015));text-align:left}
+.accuracy-title{font-size:10px;letter-spacing:2px;color:#9ba8ad;text-align:center;margin-bottom:12px}
+.accuracy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.accuracy-stat{min-width:0;padding:10px 4px;text-align:center;border-radius:10px;background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.045)}
+.accuracy-stat span{display:block;font-size:clamp(18px,5vw,25px);font-weight:900;color:var(--neon);text-shadow:0 0 12px rgba(0,255,157,.2)}
+.accuracy-stat small{display:block;margin-top:5px;font-size:9px;color:#a4b2b2;letter-spacing:.3px}
+.accuracy-note{font-size:10px;line-height:1.5;color:#7f9191;margin-top:10px;text-align:center}
+
+
+.jackpot-banner{margin:14px 0 4px;padding:15px 10px;border:1px solid #ffe66d;border-radius:14px;background:radial-gradient(ellipse at center,rgba(255,230,109,.18),rgba(255,180,0,.035));box-shadow:0 0 20px rgba(255,210,50,.16);text-align:center;animation:jackpotPop .45s cubic-bezier(.2,.8,.2,1) both,jackpotGlow 1.4s ease-in-out infinite}
+.jackpot-flash{font-size:clamp(23px,7vw,32px);font-weight:1000;letter-spacing:3px;color:#ffe66d;text-shadow:0 0 9px rgba(255,230,109,.8),0 0 25px rgba(255,180,0,.45)}
+.jackpot-sub{margin-top:5px;font-size:10px;letter-spacing:2px;color:#fff2b0}
+@keyframes jackpotPop{from{opacity:0;transform:scale(.7) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes jackpotGlow{0%,100%{box-shadow:0 0 14px rgba(255,210,50,.12)}50%{box-shadow:0 0 30px rgba(255,210,50,.36)}}
+.hidden{display:none}
+
+
+.jackpot-status{color:#ffe66d!important;font-weight:1000;letter-spacing:.4px;text-shadow:0 0 8px rgba(255,210,50,.8),0 0 18px rgba(255,120,0,.45);animation:jackpotText .8s ease-in-out infinite alternate}
+.jackpot-banner{position:relative;isolation:isolate;overflow:hidden;margin:16px 0 6px;padding:22px 10px 18px;border:1px solid #ffe66d;border-radius:18px;background:radial-gradient(ellipse at center,rgba(255,211,64,.2),rgba(95,35,0,.1) 55%,rgba(0,0,0,.3));box-shadow:0 0 24px rgba(255,196,0,.22),inset 0 0 25px rgba(255,170,0,.08);animation:jackpotEntrance .55s cubic-bezier(.2,.8,.2,1) both}
+.jackpot-content{position:relative;z-index:2}
+.jackpot-crown{font-size:clamp(25px,7vw,36px);font-weight:1000;letter-spacing:3px;color:#fff1a6;text-shadow:0 0 8px #ffce35,0 0 24px #ff7b00;animation:jackpotText .55s ease-in-out infinite alternate}
+.jackpot-sub{margin-top:7px;font-size:11px;letter-spacing:3px;color:#fff}
+.jackpot-party{font-size:clamp(25px,8vw,40px);letter-spacing:3px;margin:12px 0;animation:partyBounce .65s ease-in-out infinite alternate;filter:drop-shadow(0 0 9px rgba(255,200,30,.45))}
+.jackpot-message{font-size:11px;font-weight:900;letter-spacing:3px;color:#ffe66d}
+.jackpot-confetti{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+@keyframes jackpotEntrance{0%{opacity:0;transform:scale(.65) rotate(-2deg)}65%{opacity:1;transform:scale(1.04) rotate(1deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes jackpotText{from{filter:brightness(1);transform:scale(1)}to{filter:brightness(1.45);transform:scale(1.035)}}
+@keyframes partyBounce{from{transform:translateY(2px) scale(.97)}to{transform:translateY(-5px) scale(1.05)}}
+
+</style>
+</head>
+
+<body>
+
+<div class="header-container">
+<div style="font-size:10px;color:#7d9290;letter-spacing:3px;margin-bottom:12px;">● SYSTEM ONLINE</div>
+<div class="zigzag-name">FAB VIP</div>
+<div style="color:var(--gold);font-size:10px;letter-spacing:4px;margin-top:5px;">
+STRICT LOGIC V15
+</div>
+</div>
+
+<div class="glass-box">
+<div style="color:#888;font-size:13px;" id="pID">PERIOD: ---</div>
+<div class="pred-val" id="pRes">WAIT...</div>
+<div style="color:var(--gold);font-size:13px;font-weight:bold;border:1px dashed var(--gold);padding:8px;" id="pOpps">
+ANALYZING...
+</div>
+
+
+<div id="jackpotBanner" class="jackpot-banner hidden" role="status">
+  <div class="jackpot-burst" aria-hidden="true"></div>
+  <div class="jackpot-content">
+    <div class="jackpot-crown">✦ JACKPOT ✦</div>
+    <div class="jackpot-sub">EXACT NUMBER HIT!</div>
+    <div class="jackpot-party">🎉 🎊 🥳 🎊 🎉</div>
+    <div class="jackpot-message">BOOM! PERFECT HIT!</div>
+  </div>
+  <canvas id="jackpotConfetti" class="jackpot-confetti" aria-hidden="true"></canvas>
+</div>
+
+<div class="accuracy-panel" aria-live="polite">
+  <div class="accuracy-title">LIVE ACCURACY TRACKER</div>
+  <div class="accuracy-grid">
+    <div class="accuracy-stat"><span id="accRate">0.0%</span><small>Prediction accuracy</small></div>
+    <div class="accuracy-stat"><span id="accWins">0</span><small>Correct</small></div>
+    <div class="accuracy-stat"><span id="accTotal">0</span><small>Tested rounds</small></div>
+  </div>
+  <div class="accuracy-note">Counts rounds observed while this page is open. Past accuracy does not guarantee future results.</div>
+</div>
+
+
+<table>
+<thead>
+<tr>
+<th>PRD</th>
+<th>PRED</th>
+<th>NUM</th>
+<th>STATUS</th>
+</tr>
+</thead>
+<tbody id="logs"></tbody>
+</table>
+</div>
+
+<div class="footer-branding">
+<div class="name-box" onclick="triggerAdmin()">FAB VIP</div>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeAdmin()"></div>
+
+<div id="adminPanel" class="admin-modal hidden">
+<h3 style="color:var(--gold);text-align:center;margin-top:0;">
+MASTER CONTROL
+</h3>
+
+<button onclick="closeAdmin()" style="width:100%;padding:12px;background:var(--gold);border:none;border-radius:10px;font-weight:bold;">
+CLOSE
+</button>
+</div>
+
+<script>
+const ADMIN_PASS="Fab009";
+const B_POOL=[5,6,7,8,9];
+const S_POOL=[0,1,2,3,4];
+
+let currentOpposites=[];
+let lastId=null;
+let savedPrediction=null;
+let savedOpps=[];
+let accuracyWins=0;
+let accuracyTotal=0;
+
+function runLogic(){
+
+setInterval(async()=>{
+
+try{
+
+const res=await fetch('https://draw.ar-lottery01.com/WinGo/WinGo_30S/GetHistoryIssuePage.json');
+const json=await res.json();
+const latest=json.data.list[0];
+
+const last5=json.data.list.slice(0,5)
+.map(x=>parseInt(x.number)>=5?"BIG":"SMALL");
+
+const nextPred=last5.filter(x=>x==="BIG").length>2?"BIG":"SMALL";
+
+if(lastId!==latest.issueNumber){
+
+const actualNum=parseInt(latest.number);
+const actualSize=actualNum>=5?"BIG":"SMALL";
+
+if(lastId){
+
+const isWin=(savedPrediction===actualSize)
+|| savedOpps.includes(actualNum);
+
+// Separate accuracy score: only the BIG/SMALL prediction is counted here.
+const exactNumberHit=savedOpps.includes(actualNum);
+const jackpotBanner=document.getElementById('jackpotBanner');
+if(jackpotBanner){
+  jackpotBanner.classList.toggle('hidden', !exactNumberHit);
+  if(exactNumberHit) launchJackpotConfetti();
+}
+const predictionCorrect=(savedPrediction===actualSize) || exactNumberHit;
+accuracyTotal++;
+if(predictionCorrect) accuracyWins++;
+document.getElementById('accWins').innerText=accuracyWins;
+document.getElementById('accTotal').innerText=accuracyTotal;
+document.getElementById('accRate').innerText=
+  (accuracyWins/accuracyTotal*100).toFixed(1) + "%";
+
+const row=`
+<tr>
+<td>${latest.issueNumber.slice(-3)}</td>
+<td>${savedPrediction}</td>
+<td>${actualNum}</td>
+<td class="${exactNumberHit?'jackpot-status':(isWin?'win':'loss')}">
+ ${exactNumberHit?'🎉 JACKPOT 🎉':(isWin?'WIN':'LOSS')}
+</td>
+</tr>`;
+
+document.getElementById('logs').innerHTML=
+row+document.getElementById('logs').innerHTML;
+}
+
+lastId=latest.issueNumber;
+savedPrediction=nextPred;
+
+const pool=nextPred==="BIG"?S_POOL:B_POOL;
+currentOpposites=pool.sort(()=>0.5-Math.random()).slice(0,2);
+savedOpps=currentOpposites;
+}
+
+document.getElementById('pID').innerText=
+"PERIOD: "+(BigInt(latest.issueNumber)+1n).toString();
+
+document.getElementById('pRes').innerText=nextPred;
+document.getElementById('pOpps').innerText=
+"OPPOSITE NUMS: "+currentOpposites.join(", ");
+
+}catch(e){}
+
+},3000);
+}
+
+
+function launchJackpotConfetti(){
+  const canvas=document.getElementById('jackpotConfetti');
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  const rect=canvas.getBoundingClientRect();
+  const dpr=window.devicePixelRatio||1;
+  canvas.width=Math.max(1,rect.width*dpr);
+  canvas.height=Math.max(1,rect.height*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const w=rect.width,h=rect.height;
+  const bits=[];
+  const colors=['#ffe66d','#00ff9d','#ff3158','#ffffff','#ff8a00','#a78bfa'];
+  for(let i=0;i<150;i++){
+    bits.push({x:w/2+(Math.random()-.5)*w*.25,y:h*.62,
+      vx:(Math.random()-.5)*9,vy:-Math.random()*8-2,
+      g:.16+Math.random()*.12,size:3+Math.random()*5,
+      rot:Math.random()*Math.PI,spin:(Math.random()-.5)*.22,
+      color:colors[Math.floor(Math.random()*colors.length)],
+      life:70+Math.random()*35});
+  }
+  let frame=0;
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(const b of bits){
+      b.x+=b.vx;b.y+=b.vy;b.vy+=b.g;b.rot+=b.spin;b.life--;
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate(b.rot);
+      ctx.globalAlpha=Math.max(0,Math.min(1,b.life/25));
+      ctx.fillStyle=b.color;ctx.fillRect(-b.size/2,-b.size/2,b.size,b.size*1.5);
+      ctx.restore();
+    }
+    frame++;
+    if(frame<105) requestAnimationFrame(draw);
+    else ctx.clearRect(0,0,w,h);
+  }
+  requestAnimationFrame(draw);
+}
+
+function triggerAdmin(){
+if(prompt("PASSWORD:")===ADMIN_PASS){
+document.getElementById('adminPanel').classList.remove('hidden');
+document.getElementById('overlay').style.display="block";
+}
+}
+
+function closeAdmin(){
+document.getElementById('adminPanel').classList.add('hidden');
+document.getElementById('overlay').style.display="none";
+}
+
+runLogic();
+</script>
+
+</body>
+</html>
